@@ -1,5 +1,6 @@
 /* global test */
 const expect = require('chai').expect;
+const sinon = require('sinon');
 
 test('color-picker-selection color', function (context) {
   const output = context.render({
@@ -15,13 +16,11 @@ test('color-picker-selection when clicked should emit colorSelected event', func
   });
 
   var component = output.component;
-  var isCalled = false;
-  component.on('colorSelected', function () {
-    isCalled = true;
-  });
+  var spyOnEvent = sinon.spy();
+  component.on('colorSelected', spyOnEvent);
 
   var componentEl = component.el;
   componentEl.click();
 
-  expect(isCalled).to.equal(true);
+  expect(spyOnEvent.calledOnce).to.equal(true);
 });
