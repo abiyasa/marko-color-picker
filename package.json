@@ -11,12 +11,13 @@
     "chai": "^3.5.0",
     "eslint": "^3.13.0",
     "eslint-config-marko": "^1.0.1",
-    "marko-cli": "^2.2.0"
+    "marko-cli": "^2.2.0",
+    "sinon": "^4.1.4"
   },
   "dependencies": {
-    "flat-colors": "^3.3.7",
+    "flat-colors": "^3.3.10",
     "flat-ui-colors": "^2.1.8",
-    "marko": "^4.4.28",
+    "marko": "^4.7.4",
     "marko-starter": "^2.0.1"
   },
   "scripts": {
@@ -24,6 +25,7 @@
     "serve-static": "marko-starter serve-static",
     "build": "marko-starter build",
     "build-prod": "LASSO_TIMEOUT=200000 NODE_ENV=production npm run build",
-    "test": "marko test"
+    "test": "marko test",
+    "test:single": "marko test components/color-picker/components/color-picker-header/test.js"
   }
 }
